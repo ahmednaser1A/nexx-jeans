@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "Segoe UI", Tahoma, sans-serif;
+  --font-display: "Amiri", "Cairo", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
+  background-color: #050506;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #d4af37;
+  color: #000;
+}
+
+/* Custom cursor on precise pointers */
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  [data-cursor] {
+    cursor: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#8a6d1f, #d4af37);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Gold shimmer text */
+.gold-text {
+  background: linear-gradient(
+    90deg,
+    #8a6d1f 0%,
+    #d4af37 25%,
+    #f5e6b8 50%,
+    #d4af37 75%,
+    #8a6d1f 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Thin gold divider */
+.gold-divider {
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(212, 175, 55, 0.6),
+    transparent
+  );
+  height: 1px;
+}
